@@ -139,38 +139,74 @@
         </imu>
       </sensor>
       
-      <sensor name="gpu_lidar" type="gpu_lidar">
+      <!-- <sensor name="gpu_lidar" type="gpu_lidar">
+        <pose>0 0 0.2 0 0 0</pose>
+
         <lidar>
           <scan>
             <horizontal>
-              <samples>720</samples>
+              <samples>1080</samples>             
               <resolution>1</resolution>
-              <min_angle>-3.1459</min_angle>
-              <max_angle>3.1459</max_angle>
+              <min_angle>-2.35619</min_angle>     
+              <max_angle>2.35619</max_angle>     
             </horizontal>
             <vertical>
-              <samples>12</samples>
+              <samples>1</samples>
               <resolution>1</resolution>
-              <min_angle>-0.261799</min_angle>
-              <max_angle>0.261799</max_angle>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
             </vertical>
           </scan>
+
           <range>
-            <min>0.3</min>
-            <max>50</max>
+            <min>0.1</min>           
+            <max>30.0</max>
             <resolution>0.01</resolution>
           </range>
+
           <noise>
             <type>gaussian</type>
-            <mean>0</mean>
-            <stddev>0.01</stddev>
+            <mean>0.0</mean>
+            <stddev>0.0</stddev>  
           </noise>
         </lidar>
+
         <gz_frame_id>saye/base_link</gz_frame_id>
         <topic>scan</topic>
-        <visualize>true</visualize>
-        <update_rate>10</update_rate>
-      </sensor>
+        <visualize>false</visualize>
+        <update_rate>40</update_rate>
+      </sensor> -->
+
+ 
+        <!-- Custom sensor with RGL plugin that simulates lidar -->
+        <sensor name="gpu_lidar" type="custom">
+          <pose>0 0 0.2 0 0 0</pose>
+          <plugin filename="RGLServerPluginInstance" name="rgl::RGLServerPluginInstance">
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+            </range>
+            <update_rate>40</update_rate>
+            <update_on_paused_sim>false</update_on_paused_sim>
+            <topic>scan</topic>
+            <!-- <topic>rgl_lidar</topic>  -->
+            <frame>saye/base_link</frame>
+            <pattern_lidar2d>
+                <horizontal>
+                    <samples>1080</samples>
+                    <min_angle>-2.35619</min_angle>
+                    <max_angle>2.35619</max_angle>
+                </horizontal>
+            </pattern_lidar2d>
+            <!-- <pattern_preset>Puck</pattern_preset> -->
+            <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.0</stddev>  
+          </noise>
+          </plugin>
+        </sensor>
+ 
 
       <sensor name="rs_front" type="rgbd_camera">
         <pose>0.122 0 0.257 0 0 0</pose>

@@ -1,3 +1,24 @@
+# Docker Setting
+
+``` shell
+sudo docker compose build gz_sim
+```
+
+```shell
+sudo docker run -it --rm   --gpus all   --runtime=nvidia   -e NVIDIA_DRIVER_CAPABILITIES=all   -e DISPLAY=$DISPLAY   -e XDG_RUNTIME_DIR=/tmp/runtime-root   -v /tmp/.X11-unix:/tmp/.X11-unix   HangyoCho/gz_sim_ackermann:latest
+```
+``` shell
+ros2 launch saye_bringup saye_2d_spawn.launch.py
+
+or
+
+ros2 launch saye_bringup saye_mid360_spawn.launch.py
+
+or
+
+ros2 launch saye_bringup saye_os1_spawn.launch.py
+```
+
 # Ackermann Steering Vehicle Simulation in ROS2 with Gazebo Sim Harmonic
 
 This project features the simulation of a custom vehicle with **Ackermann steering capabilities**, developed using **ROS2** and the **Gazebo Sim Harmonic environment**. The model integrates a variety of sensors and navigation tools for autonomous operation, making it one of the first implementations of an Ackermann steering vehicle in this simulation framework.

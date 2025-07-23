@@ -720,6 +720,7 @@
       <publish_sensor_pose>true</publish_sensor_pose>
       <publish_model_pose>false</publish_model_pose>
       <use_pose_vector_msg>true</use_pose_vector_msg>
+      <update_frequency>200</update_frequency>
     </plugin>
 
     <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">

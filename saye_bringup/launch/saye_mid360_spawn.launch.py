@@ -73,8 +73,15 @@ def generate_launch_description():
             '-topic', '/robot_description',  # Namespace'e uygun topic
             '-name', 'saye',
             '-allow_renaming', 'true',
-            '-z', '0.35'
+            '-z', '0.15'
         ]
+    )
+    gt_pose_node = Node(
+        package='gt_pose',
+        executable='gt_pose_node',
+        name='gt_pose_node',
+        output='screen',
+        parameters=[{'use_sim_time': True}]
     )
     return LaunchDescription([
         gz_sim,
@@ -83,5 +90,6 @@ def generate_launch_description():
                               description='Open RViz.'),
         bridge,
         robot_state_publisher,
-        rviz
+        rviz,
+        gt_pose_node
     ])

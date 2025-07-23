@@ -21,7 +21,7 @@
         <pose>.1371 0 -.0115 -0.018 0 1.5707</pose>
         <geometry>
           <mesh>
-           <uri >package://saye_description/models/saye_3d/meshes/BaseReduced.dae</uri>
+           <uri >package://saye_description/models/saye_mid360/meshes/BaseReduced.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -30,7 +30,7 @@
         <geometry>
           <mesh>
           /meshes/BaseReduced.dae
-           <uri >package://saye_description/models/saye_3d/meshes/TopReduced.dae</uri>
+           <uri >package://saye_description/models/saye_mid360/meshes/TopReduced.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -46,7 +46,7 @@
         <pose>0.05 0 .106 0 0 0</pose> 
         <geometry>
           <mesh>
-           <uri >package://saye_description/models/saye_3d/meshes/STL27L.dae</uri>
+           <uri >package://saye_description/models/saye_mid360/meshes/STL27L.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -420,7 +420,7 @@
         <pose>0 0 0 0 0 3.14159</pose>
         <geometry>
           <mesh>
-           <uri >package://saye_description/models/saye_3d/meshes/Wheel.dae</uri>
+           <uri >package://saye_description/models/saye_mid360/meshes/Wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -507,7 +507,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-           <uri>package://saye_description/models/saye_3d/meshes/Wheel.dae</uri>
+           <uri>package://saye_description/models/saye_mid360/meshes/Wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -628,7 +628,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-           <uri >package://saye_description/models/saye_3d/meshes/Wheel.dae</uri>
+           <uri >package://saye_description/models/saye_mid360/meshes/Wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -670,7 +670,7 @@
         <pose>0 0 0 0 0 3.14159</pose>
         <geometry>
           <mesh>
-           <uri >package://saye_description/models/saye_3d/meshes/Wheel.dae</uri>
+           <uri >package://saye_description/models/saye_mid360/meshes/Wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>

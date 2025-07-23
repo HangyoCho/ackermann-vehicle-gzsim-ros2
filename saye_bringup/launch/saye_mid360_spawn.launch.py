@@ -21,7 +21,7 @@ def generate_launch_description():
     
 
     # Load the SDF file from "description" package
-    sdf_file  =  os.path.join(pkg_project_description, 'models', 'saye_3d', 'model.sdf')
+    sdf_file  =  os.path.join(pkg_project_description, 'models', 'saye_mid360', 'model.sdf')
     with open(sdf_file, 'r') as infp:
         robot_desc = infp.read()
 

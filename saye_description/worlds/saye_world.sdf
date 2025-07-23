@@ -12,7 +12,7 @@
     </plugin>
 
     <plugin name='rgl::RGLServerPluginManager' filename='RGLServerPluginManager'>
-      <do_ignore_entities_in_lidar_link>true</do_ignore_entities_in_lidar_link>
+    <do_ignore_entities_in_lidar_link>true</do_ignore_entities_in_lidar_link>
     </plugin>
 
     <plugin

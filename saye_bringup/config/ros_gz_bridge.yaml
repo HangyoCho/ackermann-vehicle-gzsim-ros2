@@ -24,6 +24,12 @@
   gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
 
+- ros_topic_name: "/lidar_points"
+  gz_topic_name: "/rgl_lidar"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
 - ros_topic_name: "/tf"
   gz_topic_name: "/model/saye/pose"
   ros_type_name: "tf2_msgs/msg/TFMessage"
@@ -75,3 +81,4 @@
 #   ros_type_name: "sensor_msgs/msg/PointCloud2"
 #   gz_type_name: "gz.msgs.PointCloudPacked"
 #   direction: GZ_TO_ROS
+

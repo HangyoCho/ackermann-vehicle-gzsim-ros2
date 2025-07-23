@@ -1,4 +1,4 @@
-# Docker Setting
+# Docker
 
 ``` shell
 sudo docker compose build gz_sim

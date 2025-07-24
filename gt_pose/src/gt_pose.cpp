@@ -14,7 +14,7 @@ public:
     {
         this->set_parameter(rclcpp::Parameter("use_sim_time", true));
 
-        path_pub_ = this->create_publisher<nav_msgs::msg::Path>("gt_path", 10);
+        // path_pub_ = this->create_publisher<nav_msgs::msg::Path>("gt_path", 10);
         pose_pub_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("gt_pose", 10);
 
         timer_ = this->create_wall_timer(
@@ -34,7 +34,7 @@ private:
             tf = tf_buffer_.lookupTransform(
                 "odom", "saye/base_link",  // Change to your robot's base frame if needed
                 rclcpp::Time(0),           // <-- Use latest available transform
-                rclcpp::Duration::from_seconds(0.05)
+                rclcpp::Duration::from_seconds(0.01)
             );
         } catch (tf2::TransformException &ex) {
             RCLCPP_WARN_THROTTLE(this->get_logger(), *this->get_clock(), 2000, "TF lookup failed: %s", ex.what());
@@ -49,15 +49,15 @@ private:
         pose_stamped.pose.position.z = tf.transform.translation.z + LidarHeight; // Adjust for LiDAR height if needed
         pose_stamped.pose.orientation = tf.transform.rotation;
 
-        gt_path_.header.stamp = pose_stamped.header.stamp;
-        gt_path_.poses.push_back(pose_stamped);
+        // gt_path_.header.stamp = pose_stamped.header.stamp;
+        // gt_path_.poses.push_back(pose_stamped);
 
         pose_pub_->publish(pose_stamped);
-        path_pub_->publish(gt_path_);
+        // path_pub_->publish(gt_path_);
     }
 
     nav_msgs::msg::Path gt_path_;
-    rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_;
+    // rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_;
     rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr pose_pub_;
     tf2_ros::Buffer tf_buffer_;
     tf2_ros::TransformListener tf_listener_;
